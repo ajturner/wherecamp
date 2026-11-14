@@ -1,0 +1,45 @@
+name: Check camp links
+
+# Tests every link in wherecamps.geojson and archives.json, and looks up an
+# Internet Archive copy for each dead one. It only reports; it changes nothing.
+on:
+  pull_request:
+    paths:
+      - wherecamps.geojson
+      - archives.json
+      - scripts/check_links.py
+      - .github/workflows/check-links.yml
+  workflow_dispatch:
+    inputs:
+      discover:
+        description: "Optional: space-separated URL prefixes. Lists the archived pages under each one."
+        required: false
+
+permissions:
+  contents: read
+
+# A newer run replaces an older one for the same pull request.
+concurrency:
+  group: check-links-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links
+        run: python3 scripts/check_links.py --report link-report.json
+      - name: List archived pages
+        if: ${{ inputs.discover != '' && inputs.discover != null }}
+        timeout-minutes: 8
+        continue-on-error: true
+        env:
+          PREFIXES: ${{ inputs.discover }}
+        run: python3 scripts/check_links.py --discover $PREFIXES
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: link-report
+          path: link-report.json

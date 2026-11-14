@@ -4,11 +4,11 @@ Unconferences at the intersection of geography, technology, design, and culture.
 
 The Where 2.0 Conference is no more, but we still need a place and time where people fascinated by the power of location technology can gather to share ideas, show off projects, and connect our community. WhereCamps are a distributed unconference held in different cities. Each one is a free event where anyone can come to talk about geo. Between 2007 and 2015 there were 38 camps in 20 cities on 4 continents, and now we're bringing them back.
 
-**Website:** https://wherecamp.github.io/wherecamp/
+**Website:** https://ajturner.github.io/wherecamp/
 
 ## Propose and vote on the next camp
 
-- **Propose:** click anywhere on the [site map](https://wherecamp.github.io/wherecamp/#map), or [open a proposal](https://github.com/wherecamp/wherecamp/issues/new?template=propose-location.yml) directly. Proposals are GitHub issues labelled `proposed-location`.
+- **Propose:** click anywhere on the [site map](https://ajturner.github.io/wherecamp/#map), or [open a proposal](https://github.com/ajturner/wherecamp/issues/new?template=propose-location.yml) directly. Proposals are GitHub issues labelled `proposed-location`.
 - **Vote:** add a 👍 reaction to a proposal. The site ranks proposals by 👍 and sizes their pins on the map.
 - Proposals without valid coordinates wash up on [Null Island](https://en.wikipedia.org/wiki/Null_Island) (0°N, 0°E), like every other bad geocode.
 
@@ -33,6 +33,12 @@ It's a plain static site (`index.html`, `styles.css`, `script.js`) served by Git
 - **Camp data:** [`wherecamps.geojson`](wherecamps.geojson), adapted from [reidab/wherecamp.org](https://github.com/reidab/wherecamp.org).
 - **Proposals:** read from the public GitHub Issues API and cached in the browser for 10 minutes.
 - **Run it locally:** `python3 -m http.server`, then open http://localhost:8000.
+
+## Archives and link checks
+
+[`archives.html`](archives.html) lists every past camp with its site, plus session notes, write-ups and slides from [`archives.json`](archives.json). To add an item, add an entry with `camp` (the camp's `eventName`, or `All camps`), `title`, `type` (`notes`, `write-up`, `slides` or `video`), `url`, and optionally `author` and `date`.
+
+Old camp sites disappear, so `scripts/check_links.py` tests every link in `wherecamps.geojson` and `archives.json`. A link counts as live only if the page still mentions WhereCamp, because old domains get re-registered. For each dead link it finds the Internet Archive copy closest to the event date. The "Check camp links" workflow runs it on pull requests that change the data. Run it with `--fix` to rewrite dead links; the old address is kept as `originalUrl`.
 
 ## Builds and previews
 
