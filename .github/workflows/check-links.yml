@@ -35,7 +35,7 @@ jobs:
         timeout-minutes: 8
         continue-on-error: true
         env:
-          PREFIXES: ${{ inputs.discover || 'wherecamp.pbworks.com wherecamppdx.org/wiki socialtext.net/wherecamp wherecamp5280.org wherecamp.eu wherecamp.de' }}
+          PREFIXES: ${{ inputs.discover || 'www.socialtext.net/wherecamp/ wherecamppdx.org/wiki/2008/ wherecamppdx.org/wiki/2010/ wherecamppdx.org/wiki/2011/ wherecamppdx.org/wiki/2012/' }}
         run: python3 scripts/check_links.py --discover $PREFIXES
       - uses: actions/upload-artifact@v4
         if: always()

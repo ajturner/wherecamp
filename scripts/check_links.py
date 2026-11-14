@@ -31,6 +31,7 @@ ARCHIVES = ROOT / "archives.json"
 UA = "Mozilla/5.0 (compatible; wherecamp-link-check/1.0)"
 MENTION = re.compile(r"where\s?camp", re.I)
 WAYBACK = re.compile(r"^https?://web\.archive\.org/web/")
+BLOCKED = {202, 401, 403, 429}
 
 
 def fetch(url, timeout=25, tries=2):
@@ -172,6 +173,8 @@ def main():
         r = check(url)
         archived = bool(WAYBACK.match(url))
         verdict = ("archived" if r["live"] else "dead-archive") if archived else ("live" if r["live"] else "dead")
+        if not archived and r["status"] in BLOCKED:
+            verdict = "blocked"  # the site answered but refused an automated visitor; a person can likely open it
         snap = None
         if verdict.startswith("dead"):
             original = WAYBACK.sub("", url).split("/", 1)[-1] if archived else url
@@ -199,7 +202,9 @@ def main():
         Path(args.report).write_text(json.dumps(report, indent=2))
     print("\nFIXES_JSON=" + json.dumps(fixes, separators=(",", ":")))
     dead = sum(r["verdict"].startswith("dead") for r in results)
-    print(f"\n{len(results)} links: {len(results) - dead} ok, {dead} dead, {unresolved} dead with no archive copy")
+    blocked = sum(r["verdict"] == "blocked" for r in results)
+    print(f"\n{len(results)} links: {len(results) - dead - blocked} ok, {blocked} blocked an automated check, "
+          f"{dead} dead, {unresolved} dead with no archive copy")
     if args.fix:
         print(f"rewrote {apply_fixes(fixes)} links")
     return 0

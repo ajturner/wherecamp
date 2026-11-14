@@ -54,7 +54,7 @@
 
     const general = byCamp.get("All camps") || [];
     let html = general.length
-      ? `<section class="year-block"><h2>Across all camps</h2><article class="camp-archive" data-types="${esc(general.map((a) => a.type).join(" "))}"><ul class="archive-items">${general.map(itemHtml).join("")}</ul></article></section>`
+      ? `<section class="year-block"><h2>The WhereCamp wiki and general pages</h2><article class="camp-archive" data-types="${esc(general.map((a) => a.type).join(" "))}"><ul class="archive-items">${general.map(itemHtml).join("")}</ul></article></section>`
       : "";
     [...years.keys()].sort().reverse().forEach((y) => {
       html += `<section class="year-block"><h2>${esc(y)}</h2>${years.get(y).map((p) => campHtml(p, byCamp.get(p.eventName) || [])).join("")}</section>`;
