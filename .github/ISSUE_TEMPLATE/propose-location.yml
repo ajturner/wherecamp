@@ -1,0 +1,51 @@
+name: Propose a WhereCamp location
+description: Suggest a city for a future WhereCamp. Others vote with a 👍 reaction, and it appears on the map at wherecamp.github.io/wherecamp.
+title: "[Proposal] WhereCamp "
+labels: ["proposed-location"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping chart the next WhereCamp! 🗺️
+        Proposals show up on the site map, sized by 👍 reactions. **Please fill in latitude and longitude**, or your proposal will wash up on Null Island (0°N, 0°E) along with every other bad geocode.
+  - type: input
+    id: city
+    attributes:
+      label: City or region
+      placeholder: "e.g. Lagos, Nigeria"
+    validations:
+      required: true
+  - type: input
+    id: latitude
+    attributes:
+      label: Latitude
+      description: Decimal degrees, between -90 and 90. Clicking the map on the site fills this in.
+      placeholder: "6.5244"
+    validations:
+      required: true
+  - type: input
+    id: longitude
+    attributes:
+      label: Longitude
+      description: Decimal degrees, between -180 and 180.
+      placeholder: "3.3792"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why here?
+      description: The local geo community, hot topics, possible venues, anything that makes it a good fit.
+  - type: dropdown
+    id: host
+    attributes:
+      label: Would you help organise it?
+      options:
+        - "Yes, I'd help organise"
+        - "Maybe, with co-organisers"
+        - "No, but I'd attend"
+  - type: input
+    id: timeframe
+    attributes:
+      label: Rough timeframe
+      placeholder: "e.g. Spring 2027"

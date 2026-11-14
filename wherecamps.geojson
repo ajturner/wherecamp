@@ -1,0 +1,923 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.024782,
+     37.416263
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp SF 2007",
+    "series": "WhereCamp SF",
+    "startDate": "2007-06-02",
+    "endDate": "2007-06-03",
+    "url": "http://wherecamp.pbworks.com/WhereCampSF",
+    "venueName": "Yahoo",
+    "venueStreetAddress": "710 First Avenue",
+    "venueLocality": "Sunnyvale",
+    "venueRegion": "California",
+    "venuePostalCode": "94089",
+    "venueCountry": "USA",
+    "color": "#6f2c9f"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.085358,
+     37.420912
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp SF 2008",
+    "series": "WhereCamp SF",
+    "startDate": "2008-05-17",
+    "endDate": "2008-05-18",
+    "url": "http://wherecamp.pbworks.com/WhereCamp2008",
+    "venueName": "Google",
+    "venueStreetAddress": "1685 Charleston Road",
+    "venueLocality": "Mountain View",
+    "venueRegion": "California",
+    "venuePostalCode": "94043",
+    "venueCountry": "USA",
+    "color": "#00b605"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.676408,
+     45.525626
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCampPDX 1",
+    "series": "WhereCampPDX",
+    "startDate": "2008-10-17",
+    "endDate": "2008-10-19",
+    "url": "http://wherecamppdx.org/wiki/2008",
+    "venueName": "Souk",
+    "venueStreetAddress": "322 NW 6th Avenue, Suite 200",
+    "venueLocality": "Portland",
+    "venueRegion": "Oregon",
+    "venuePostalCode": "97209",
+    "venueCountry": "USA",
+    "color": "#500d02"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     36.722553,
+     -1.268798
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Africa 2009",
+    "series": "WhereCamp Africa",
+    "startDate": "2009-04-04",
+    "endDate": "2009-04-04",
+    "url": "http://web.archive.org/web/20090223152352/http://www.wherecampafrica.org/",
+    "venueName": "International Livestock Research Institute",
+    "venueStreetAddress": "30709 Naivasha Rd",
+    "venueLocality": "Nairobi",
+    "venueCountry": "Kenya",
+    "color": "#ba182a"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.161914,
+     37.443174
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp SF 2009",
+    "series": "WhereCamp SF",
+    "startDate": "2009-05-22",
+    "endDate": "2009-05-23",
+    "url": "https://www.socialtext.net/wherecamp/Wherecamp%202009",
+    "venueName": "SocialText HQ",
+    "venueStreetAddress": "665 High St",
+    "venueLocality": "Palo Alto",
+    "venueRegion": "California",
+    "venuePostalCode": "94301",
+    "venueCountry": "USA",
+    "color": "#006195"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.660229,
+     45.527276
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCampPDX 2",
+    "series": "WhereCampPDX",
+    "startDate": "2009-10-02",
+    "endDate": "2009-10-04",
+    "url": "http://wherecamppdx.org/wiki/2009",
+    "venueName": "Metro Regional Center",
+    "venueStreetAddress": "600 NE Grand Ave",
+    "venueLocality": "Portland",
+    "venueRegion": "Oregon",
+    "venuePostalCode": "97232",
+    "venueCountry": "USA",
+    "color": "#943131"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -104.963269,
+     39.679475
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp5280 2009",
+    "series": "WhereCamp5280",
+    "startDate": "2009-10-14",
+    "endDate": "2009-10-15",
+    "url": "http://www.wherecamp5280.org/archives/2009/Home",
+    "venueName": "University of Denver, Sturm Hall.",
+    "venueStreetAddress": "2000 E. Asbury Ave.",
+    "venueLocality": "Denver",
+    "venueRegion": "Colorado",
+    "venuePostalCode": "80208",
+    "venueCountry": "USA",
+    "color": "#72a8ff"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.575609,
+     45.502836
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Montreal 2009",
+    "series": "WhereCamp Montréal",
+    "startDate": "2009-10-23",
+    "endDate": "2009-10-23",
+    "url": "http://wherecampmtl.eventbrite.com/",
+    "venueName": "Redpath Museum",
+    "venueStreetAddress": "859 Rue Sherbrooke Ouest",
+    "venueLocality": "Montreal",
+    "venueRegion": "Québec",
+    "venuePostalCode": "H3A2K6",
+    "venueCountry": "Canada",
+    "color": "#f1b200"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.128729,
+     51.526989
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp EU 2010",
+    "series": "WhereCamp EU",
+    "startDate": "2010-03-12",
+    "endDate": "2010-03-13",
+    "url": "https://www.socialtext.net/wherecamp/WhereCampEU%20March%202010",
+    "venueName": "WallaceSpace",
+    "venueStreetAddress": "22 Duke’s Road",
+    "venueLocality": "London",
+    "venuePostalCode": "WC1H 9PN",
+    "venueCountry": "United Kingdom",
+    "color": "#002b9f"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.227976,
+     46.813184
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Québec 2010",
+    "series": "WhereCamp Québec",
+    "startDate": "2010-03-23",
+    "endDate": "2010-03-23",
+    "url": "http://web.archive.org/web/20110208021143/http://media.baliz-geospatial.com/fr/evenements/2010/03/23/wherecamp-quebec",
+    "venueName": "Le Cercle",
+    "venueStreetAddress": "228 St-Joseph Est",
+    "venueLocality": "Québec",
+    "venueRegion": "Québec",
+    "venuePostalCode": "G1K 3A9",
+    "venueCountry": "Canada",
+    "color": "#b4d93a"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.085358,
+     37.420912
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp SF 2010",
+    "series": "WhereCamp SF",
+    "startDate": "2010-04-03",
+    "endDate": "2010-04-04",
+    "url": "https://www.socialtext.net/wherecamp/wherecamp%20sf%202010",
+    "venueName": "Google",
+    "venueStreetAddress": "1685 Charleston Road",
+    "venueLocality": "Mountain View",
+    "venueRegion": "California",
+    "venuePostalCode": "94043",
+    "venueCountry": "USA",
+    "color": "#2966ff"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     121.547162,
+     25.044559
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Taipei",
+    "series": "WhereCamp Taipei",
+    "startDate": "2010-04-10",
+    "endDate": "2010-04-10",
+    "url": "http://registrano.com/events/wherecamptaipei",
+    "venueName": "New Civilization Bookstore",
+    "venueStreetAddress": "Lane 19, Section 1, Dà'ān Road, Daan District",
+    "venueLocality": "Taipei City",
+    "venuePostalCode": "106",
+    "venueCountry": "Taiwan",
+    "color": "#ce6600"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     36.790776,
+     -1.298713
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Africa 2010",
+    "series": "WhereCamp Africa",
+    "startDate": "2010-06-12",
+    "endDate": "2010-06-12",
+    "url": "http://web.archive.org/web/20100512184912/http://www.wherecampafrica.org/",
+    "venueName": "iHub",
+    "venueStreetAddress": "4th Floor, Bishop Magua Centre, George Padmore Ln",
+    "venueLocality": "Nairobi",
+    "venueCountry": "Kenya",
+    "color": "#f29500"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -117.072543,
+     32.777441
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp SoCal 2010",
+    "series": "WhereCamp SoCal",
+    "startDate": "2010-07-17",
+    "endDate": "2010-07-18",
+    "url": "http://web.archive.org/web/20100426170615/http://www.wherecampsocal.org/",
+    "venueName": "SDSU, Adams Humanities Building",
+    "venueStreetAddress": "5500 Campanile Dr",
+    "venueLocality": "San Diego",
+    "venueRegion": "California",
+    "venuePostalCode": "92182",
+    "venueCountry": "USA",
+    "color": "#e73a42",
+    "flyer": "wherecampsocalflyer.pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.660229,
+     45.527276
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCampPDX 3",
+    "series": "WhereCampPDX",
+    "startDate": "2010-09-24",
+    "endDate": "2010-09-26",
+    "url": "http://wherecamppdx.org/wiki/2010",
+    "venueName": "Metro Regional Center",
+    "venueStreetAddress": "600 NE Grand Ave",
+    "venueLocality": "Portland",
+    "venueRegion": "Oregon",
+    "venuePostalCode": "97232",
+    "venueCountry": "USA",
+    "color": "#5f8ea0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -105.002088,
+     39.745112
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp5280 2010",
+    "series": "WhereCamp5280",
+    "startDate": "2010-11-18",
+    "endDate": "2010-11-20",
+    "url": "http://www.wherecamp5280.org/archives/2010",
+    "venueName": "University of Colorado Denver, North Building",
+    "venueStreetAddress": "1200 Larimer Street",
+    "venueLocality": "Denver",
+    "venueRegion": "Colorado",
+    "venuePostalCode": "80217",
+    "venueCountry": "USA",
+    "color": "#003b97"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.16452,
+     37.430962
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp SF 2011",
+    "series": "WhereCamp SF",
+    "startDate": "2011-04-22",
+    "endDate": "2011-04-23",
+    "url": "https://www.socialtext.net/wherecamp/WhereCampSF%20SF%202011",
+    "venueName": "Stanford Alumni Center",
+    "venueStreetAddress": "326 Galvez St",
+    "venueLocality": "Stanford",
+    "venueRegion": "California",
+    "venuePostalCode": "94305",
+    "venueCountry": "USA",
+    "color": "#8e130e"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.40835,
+     52.536956
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp EU 2011",
+    "series": "WhereCamp EU",
+    "startDate": "2011-05-27",
+    "endDate": "2011-05-28",
+    "url": "http://wherecamp.eu/2011/02/announcing-wherecampeu-2011/",
+    "venueName": "GLS Sprachenzentrum",
+    "venueStreetAddress": "Kastanienallee 82",
+    "venueLocality": "Berlin",
+    "venuePostalCode": "10435",
+    "venueCountry": "Germany",
+    "color": "#ab1a17"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.035298,
+     38.904292
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCampDC 2011",
+    "series": "WhereCampDC",
+    "startDate": "2011-06-10",
+    "endDate": "2011-06-11",
+    "url": "http://www.wherecampdc.org/",
+    "venueName": "The Washington Post",
+    "venueStreetAddress": "1150 15th St NW",
+    "venueLocality": "Washington",
+    "venueRegion": "DC",
+    "venuePostalCode": "20071",
+    "venueCountry": "USA",
+    "color": "#254c65"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.660229,
+     45.527276
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCampPDX 4",
+    "series": "WhereCampPDX",
+    "startDate": "2011-10-07",
+    "endDate": "2011-10-09",
+    "url": "http://wherecamppdx.org/wiki/2011",
+    "venueName": "Metro Regional Center",
+    "venueStreetAddress": "600 NE Grand Ave",
+    "venueLocality": "Portland",
+    "venueRegion": "Oregon",
+    "venuePostalCode": "97232",
+    "venueCountry": "USA",
+    "color": "#8ccc28"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.569871,
+     45.511847
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Montreal 2011",
+    "series": "WhereCamp Montréal",
+    "startDate": "2011-10-11",
+    "endDate": "2011-10-11",
+    "url": "http://www.wherecamp.ca/montreal/2011/",
+    "venueName": "la maison Notman",
+    "venueStreetAddress": "51 Rue Sherbrooke Ouest",
+    "venueLocality": "Montreal",
+    "venueRegion": "Québec",
+    "venuePostalCode": "H2X1X2",
+    "venueCountry": "Canada",
+    "color": "#ce6d00"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     36.790776,
+     -1.298713
+    ]
+   },
+   "properties": {
+    "eventName": "Barcamp Nairobi / WhereCamp Africa 2011",
+    "series": "WhereCamp Africa",
+    "startDate": "2011-10-15",
+    "endDate": "2011-10-15",
+    "url": "http://web.archive.org/web/20111207094016/http://www.wherecampafrica.org/",
+    "venueName": "iHub",
+    "venueStreetAddress": "4th Floor, Bishop Magua Centre, George Padmore Ln",
+    "venueLocality": "Nairobi",
+    "venueCountry": "Kenya",
+    "color": "#1e963e"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.494277,
+     34.019282
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp SoCal 2011",
+    "series": "WhereCamp SoCal",
+    "startDate": "2011-10-26",
+    "endDate": "2011-10-27",
+    "url": "http://web.archive.org/web/20111122155007/http://www.wherecampsocal.org/",
+    "venueName": "Google Santa Monica",
+    "venueStreetAddress": "604 Arizona Avenue",
+    "venueLocality": "Santa Monica",
+    "venueRegion": "California",
+    "venuePostalCode": "90401",
+    "venueCountry": "USA",
+    "color": "#d35271"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.081309,
+     42.361324
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Boston 2011",
+    "series": "WhereCamp Boston",
+    "startDate": "2011-10-29",
+    "endDate": "2011-10-30",
+    "url": "http://www.wherecampboston.com/",
+    "venueName": "Microsoft NERD Center",
+    "venueStreetAddress": "One Memorial Drive",
+    "venueLocality": "Cambridge",
+    "venueRegion": "Massachusetts",
+    "venuePostalCode": "02142",
+    "venueCountry": "USA",
+    "color": "#0070c4"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.411577,
+     37.77413
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp SF 2012",
+    "series": "WhereCamp SF",
+    "startDate": "2012-04-01",
+    "endDate": "2012-04-01",
+    "url": "http://wherecampsf2012.eventbrite.com/",
+    "venueName": "Jellyfish",
+    "venueStreetAddress": "1286 Folsom",
+    "venueLocality": "San Francisco",
+    "venueRegion": "California",
+    "venuePostalCode": "94103",
+    "venueCountry": "USA",
+    "color": "#fd9e00"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.893592,
+     52.371093
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp EU 2012",
+    "series": "WhereCamp EU",
+    "startDate": "2012-04-28",
+    "endDate": "2012-04-29",
+    "url": "http://wherecamp.eu/2012/02/wherecampeu-2012-dates-and-location/",
+    "venueName": "Brakke Grond",
+    "venueStreetAddress": "Nes 45",
+    "venueLocality": "Amsterdam",
+    "venuePostalCode": "NL-1012KD",
+    "venueCountry": "The Netherlands",
+    "color": "#8b321d"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.352651,
+     52.544395
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Berlin 2012",
+    "series": "WhereCamp Berlin",
+    "startDate": "2012-06-22",
+    "endDate": "2012-06-23",
+    "url": "http://summer2012.wherecamp.de/",
+    "venueName": "Beuth University of Applied Sciences",
+    "venueStreetAddress": "10 Luxemburger Street",
+    "venueLocality": "Berlin",
+    "venuePostalCode": "D-13353",
+    "venueCountry": "Germany",
+    "color": "#000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.660229,
+     45.527276
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCampPDX 5",
+    "series": "WhereCampPDX",
+    "startDate": "2012-10-12",
+    "endDate": "2012-10-14",
+    "url": "http://wherecamppdx.org/wiki/2012",
+    "venueName": "Metro Regional Center",
+    "venueStreetAddress": "600 NE Grand Ave",
+    "venueLocality": "Portland",
+    "venueRegion": "Oregon",
+    "venuePostalCode": "97232",
+    "venueCountry": "USA",
+    "color": "#b42e22"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.352651,
+     52.544395
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Berlin 2012: XMas Campfire Edition",
+    "series": "WhereCamp Berlin",
+    "startDate": "2012-12-07",
+    "endDate": "2012-12-07",
+    "url": "http://wherecamp.de",
+    "venueName": "Beuth University of Applied Sciences",
+    "venueStreetAddress": "10 Luxemburger Street",
+    "venueLocality": "Berlin",
+    "venuePostalCode": "D-13353",
+    "venueCountry": "Germany",
+    "color": "#ed1b24"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.474822,
+     41.876983
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp EU 2013",
+    "series": "WhereCamp EU",
+    "startDate": "2013-01-18",
+    "endDate": "2013-01-19",
+    "url": "http://wherecamp.eu/2012/11/ciao-roma-wherecamp-eu-is-heading-to-the-eternal-city/",
+    "venueName": "Porta Futuro",
+    "venueStreetAddress": "Via Galvani 108",
+    "venueLocality": "Roma",
+    "venuePostalCode": "00153",
+    "venueCountry": "Italy",
+    "color": "#3d866f"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.730388,
+     9.013269
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Africa 2013",
+    "series": "WhereCamp Africa",
+    "startDate": "2013-03-16",
+    "endDate": "2013-03-16",
+    "url": null,
+    "venueName": "IceAddis",
+    "venueStreetAddress": "Chad St",
+    "venueLocality": "Addis Ababa",
+    "venueCountry": "Ethiopia",
+    "color": "#e81223"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.352651,
+     52.544395
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Berlin 2013",
+    "series": "WhereCamp Berlin",
+    "startDate": "2013-06-21",
+    "endDate": "2013-06-22",
+    "url": "http://wherecamp.de",
+    "venueName": "Beuth University of Applied Sciences",
+    "venueStreetAddress": "10 Luxemburger Street",
+    "venueLocality": "Berlin",
+    "venuePostalCode": "D-13353",
+    "venueCountry": "Germany",
+    "color": "#34aadf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -117.072543,
+     32.777441
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp SoCal 2013",
+    "series": "WhereCamp SoCal",
+    "startDate": "2013-07-12",
+    "endDate": "2013-07-13",
+    "url": "http://www.wherecampsocal.org/",
+    "venueName": "SDSU: North Education Building, Room 60",
+    "venueStreetAddress": "5500 Campanile Drive ",
+    "venueLocality": "San Diego",
+    "venueRegion": "California",
+    "venuePostalCode": "92182",
+    "venueCountry": "USA",
+    "color": "#f9833e"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.660229,
+     45.527276
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCampPDX 6",
+    "series": "WhereCampPDX",
+    "startDate": "2013-09-27",
+    "endDate": "2013-09-29",
+    "url": "http://wherecamppdx.org",
+    "venueName": "Metro Regional Center",
+    "venueStreetAddress": "600 NE Grand Ave",
+    "venueLocality": "Portland",
+    "venueRegion": "Oregon",
+    "venuePostalCode": "97232",
+    "venueCountry": "USA",
+    "color": "#6544b2"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.685999,
+     45.518595
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCampPDX 7",
+    "series": "WhereCampPDX",
+    "startDate": "2014-09-12",
+    "endDate": "2014-09-14",
+    "url": "http://wherecamppdx.org",
+    "venueName": "Eliot Center",
+    "venueStreetAddress": "1226 SW Salmon Street",
+    "venueLocality": "Portland",
+    "venueRegion": "Oregon",
+    "venuePostalCode": "97205",
+    "venueCountry": "USA",
+    "color": "#13bd16"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.352651,
+     52.544395
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Berlin 2014",
+    "series": "WhereCamp Berlin",
+    "startDate": "2014-11-13",
+    "endDate": "2014-11-15",
+    "url": "http://wherecamp.de",
+    "venueName": "Beuth University of Applied Sciences",
+    "venueStreetAddress": "10 Luxemburger Street",
+    "venueLocality": "Berlin",
+    "venuePostalCode": "D-13353",
+    "venueCountry": "Germany",
+    "color": "#0A6B7B"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.660229,
+     45.527276
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCampPDX 8",
+    "series": "WhereCampPDX",
+    "startDate": "2015-10-31",
+    "endDate": "2015-10-31",
+    "url": "http://wherecamppdx.org",
+    "venueName": "Metro Regional Center",
+    "venueStreetAddress": "600 NE Grand Ave",
+    "venueLocality": "Portland",
+    "venueRegion": "Oregon",
+    "venuePostalCode": "97232",
+    "venueCountry": "USA",
+    "color": "#f80"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.352651,
+     52.544395
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Berlin 2015",
+    "series": "WhereCamp Berlin",
+    "startDate": "2015-11-26",
+    "endDate": "2015-11-27",
+    "url": "http://wherecamp.de",
+    "venueName": "Beuth University of Applied Sciences",
+    "venueStreetAddress": "10 Luxemburger Street",
+    "venueLocality": "Berlin",
+    "venuePostalCode": "D-13353",
+    "venueCountry": "Germany",
+    "color": "#2090AF"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0,
+     0
+    ]
+   },
+   "properties": {
+    "eventName": "WhereCamp Null Island",
+    "series": "WhereCamp Null Island",
+    "startDate": null,
+    "endDate": null,
+    "url": null,
+    "venueName": "The Internet (nominally 0°N 0°E)",
+    "venueLocality": "Null Island",
+    "venueCountry": "Gulf of Guinea",
+    "color": "#DD6052",
+    "online": true,
+    "summary": "The online edition, open to everyone, everywhere. If your geocoder fails, you're already here."
+   }
+  }
+ ]
+}
