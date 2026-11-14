@@ -18,6 +18,11 @@ on:
 permissions:
   contents: read
 
+# A newer run replaces an older one for the same pull request.
+concurrency:
+  group: check-links-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -27,10 +32,13 @@ jobs:
       - name: Check links
         run: python3 scripts/check_links.py --report link-report.json
       - name: List archived pages
+        timeout-minutes: 8
+        continue-on-error: true
         env:
           PREFIXES: ${{ inputs.discover || 'wherecamp.pbworks.com wherecamppdx.org/wiki socialtext.net/wherecamp wherecamp5280.org wherecamp.eu wherecamp.de' }}
         run: python3 scripts/check_links.py --discover $PREFIXES
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: link-report
           path: link-report.json

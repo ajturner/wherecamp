@@ -22,6 +22,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -68,7 +69,7 @@ def check(url):
 
 def cdx(params):
     q = urllib.parse.urlencode(params, doseq=True)
-    status, _, body, err = fetch(f"https://web.archive.org/cdx/search/cdx?{q}", timeout=60, tries=3)
+    status, _, body, err = fetch(f"https://web.archive.org/cdx/search/cdx?{q}", timeout=45, tries=2)
     if status != 200 or not body.strip():
         return []
     try:
@@ -79,14 +80,30 @@ def cdx(params):
 
 
 def find_snapshot(url, date):
-    """Closest HTTP-200 capture to `date` (YYYY-MM-DD or None) that mentions WhereCamp."""
+    """Capture closest to `date` (YYYY-MM-DD or None) that returned HTTP 200 and mentions WhereCamp."""
     closest = (date or "2012-01-01").replace("-", "")
+    candidates = []
+    # The availability API is fast and answers most cases.
+    q = urllib.parse.urlencode({"url": url, "timestamp": closest})
+    status, _, body, _ = fetch(f"https://archive.org/wayback/available?{q}", timeout=30)
+    try:
+        c = json.loads(body)["archived_snapshots"]["closest"]
+        if c.get("status") == "200":
+            candidates.append(re.sub(r"^http:", "https:", c["url"]))
+    except (ValueError, KeyError):
+        pass
+    for snap in candidates:
+        status, _, body, _ = fetch(snap, timeout=45)
+        if status == 200 and MENTION.search(body):
+            return snap
+    # Slower: ask the capture index for the nearest few captures and test each one.
     rows = cdx({"url": url, "output": "json", "fl": "timestamp,original", "filter": "statuscode:200",
                 "sort": "closest", "closest": closest, "limit": 4})
     for ts, original in rows:
         snap = f"https://web.archive.org/web/{ts}/{original}"
-        time.sleep(1)
-        status, _, body, _ = fetch(snap, timeout=60)
+        if snap in candidates:
+            continue
+        status, _, body, _ = fetch(snap, timeout=45)
         if status == 200 and MENTION.search(body):
             return snap
     return None
@@ -121,7 +138,7 @@ def apply_fixes(fixes):
         p["originalUrl"], p["url"] = p["url"], snap
         n += 1
     if n:
-        GEOJSON.write_text(json.dumps(geo, indent=2, ensure_ascii=False) + "\n")
+        GEOJSON.write_text(json.dumps(geo, indent=1, ensure_ascii=False) + "\n")
     if ARCHIVES.exists() and fixes.get("archives"):
         arch = json.loads(ARCHIVES.read_text())
         for i, snap in fixes["archives"].items():
@@ -138,6 +155,7 @@ def main():
     ap.add_argument("--discover", nargs="+", metavar="PREFIX", help="list archived pages under each URL prefix")
     ap.add_argument("--limit", type=int, default=60, help="max pages per prefix for --discover")
     ap.add_argument("--report", metavar="FILE", help="write the JSON report here")
+    ap.add_argument("--workers", type=int, default=6, help="links to check at the same time")
     args = ap.parse_args()
 
     if args.fixes_from:
@@ -149,25 +167,32 @@ def main():
             time.sleep(2)
         return 0
 
-    results, fixes, unresolved = [], {"geojson": {}, "archives": {}}, 0
-    for key, i, label, url, date in load_items():
+    def examine(item):
+        key, i, label, url, date = item
         r = check(url)
-        verdict = "live" if r["live"] else "dead"
+        archived = bool(WAYBACK.match(url))
+        verdict = ("archived" if r["live"] else "dead-archive") if archived else ("live" if r["live"] else "dead")
         snap = None
-        if WAYBACK.match(url):
-            verdict = "archived" if r["live"] else "dead-archive"
-        if verdict in ("dead", "dead-archive"):
-            original = WAYBACK.sub("", url).split("/", 1)[-1] if WAYBACK.match(url) else url
+        if verdict.startswith("dead"):
+            original = WAYBACK.sub("", url).split("/", 1)[-1] if archived else url
             snap = find_snapshot(original, date)
-            if snap and snap != url:
-                fixes[key][str(i)] = snap
+        return {"file": key, "i": i, "label": label, "url": url, "verdict": verdict, "snapshot": snap, **r}
+
+    # A few at a time: dead hosts and the Internet Archive are both slow to answer.
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        results = list(pool.map(examine, load_items()))
+
+    fixes, unresolved = {"geojson": {}, "archives": {}}, 0
+    for r in results:
+        snap = r["snapshot"]
+        if r["verdict"].startswith("dead"):
+            if snap and snap != r["url"]:
+                fixes[r["file"]][str(r["i"])] = snap
             else:
                 unresolved += 1
-        results.append({"file": key, "i": i, "label": label, "url": url, "verdict": verdict, "snapshot": snap, **r})
         detail = r["error"] or f'{r["status"]} "{r["title"]}"' + ("" if r["mentions"] else " (no WhereCamp mention)")
-        print(f"[{verdict:12}] {label}\n    {url}\n    {detail}" + (f"\n    -> {r['final']}" if r["final"] else "")
+        print(f"[{r['verdict']:12}] {r['label']}\n    {r['url']}\n    {detail}" + (f"\n    -> {r['final']}" if r["final"] else "")
               + (f"\n    archive: {snap}" if snap else ""), flush=True)
-        time.sleep(0.5)
 
     report = {"results": results, "fixes": fixes}
     if args.report:
