@@ -34,6 +34,21 @@ It's a plain static site (`index.html`, `styles.css`, `script.js`) served by Git
 - **Proposals:** read from the public GitHub Issues API and cached in the browser for 10 minutes.
 - **Run it locally:** `python3 -m http.server`, then open http://localhost:8000.
 
+## Builds and previews
+
+The Pages workflow (`.github/workflows/pages.yml`, `scripts/build-pages.mjs`) publishes three things on every push to `master` and every pull request event:
+- the live site from `master` at the site root;
+- a preview of every open pull request under `pr/<number>/`;
+- a listing at `builds/`: `master`, then each open pull request with what the change is for, a link to view its build and a link to the pull request.
+
+A bar across the bottom of a preview names the pull request and links back to it and to the listing. The workflow runs nothing from a pull request, and pull requests from forks are listed without a preview. The pattern comes from [ajturner/tutti-music](https://github.com/ajturner/tutti-music). To try it locally:
+
+```sh
+gh pr list --state open --json number,title,body,author,headRefName,headRefOid,baseRefName,isDraft,isCrossRepository,url,updatedAt,additions,deletions,changedFiles,reviewDecision,labels > /tmp/prs.json
+node scripts/build-pages.mjs --out /tmp/site --prs /tmp/prs.json --repo ajturner/wherecamp
+python3 -m http.server -d /tmp/site
+```
+
 **Maintainer setup:**
 1. In Settings → Pages, set the source to **GitHub Actions**. The workflow in `.github/workflows/pages.yml` deploys the site on every push to `master`.
 2. Create the `proposed-location` label.
