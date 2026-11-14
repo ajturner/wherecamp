@@ -34,6 +34,12 @@ It's a plain static site (`index.html`, `styles.css`, `script.js`) served by Git
 - **Proposals:** read from the public GitHub Issues API and cached in the browser for 10 minutes.
 - **Run it locally:** `python3 -m http.server`, then open http://localhost:8000.
 
+## Archives and link checks
+
+[`archives.html`](archives.html) lists every past camp with its site, plus session notes, write-ups, slides and video from [`archives.json`](archives.json). To add an item, add an entry with `camp` (the camp's `eventName`, or `All camps`), `title`, `type` (`notes`, `write-up`, `slides` or `video`), `url`, and optionally `author` and `date`.
+
+Old camp sites disappear, so `scripts/check_links.py` tests every link in `wherecamps.geojson` and `archives.json`. A link counts as live only if the page still mentions WhereCamp, because old domains get re-registered. For each dead link it finds the Internet Archive copy closest to the event date. The "Check camp links" workflow runs it on pull requests that change the data. Run it with `--fix` to rewrite dead links; the old address is kept as `originalUrl`.
+
 ## Builds and previews
 
 The Pages workflow (`.github/workflows/pages.yml`, `scripts/build-pages.mjs`) publishes three things on every push to `master` and every pull request event:

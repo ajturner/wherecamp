@@ -32,10 +32,11 @@ jobs:
       - name: Check links
         run: python3 scripts/check_links.py --report link-report.json
       - name: List archived pages
+        if: ${{ inputs.discover != '' && inputs.discover != null }}
         timeout-minutes: 8
         continue-on-error: true
         env:
-          PREFIXES: ${{ inputs.discover || 'www.socialtext.net/wherecamp/ wherecamppdx.org/wiki/2008/ wherecamppdx.org/wiki/2010/ wherecamppdx.org/wiki/2011/ wherecamppdx.org/wiki/2012/' }}
+          PREFIXES: ${{ inputs.discover }}
         run: python3 scripts/check_links.py --discover $PREFIXES
       - uses: actions/upload-artifact@v4
         if: always()
