@@ -35,7 +35,7 @@ It's a plain static site (`index.html`, `styles.css`, `script.js`) served by Git
 - **Run it locally:** `python3 -m http.server`, then open http://localhost:8000.
 
 **Maintainer setup:**
-1. Enable Pages in Settings → Pages: deploy from branch `master`, folder `/`.
+1. In Settings → Pages, set the source to **GitHub Actions**. The workflow in `.github/workflows/pages.yml` deploys the site on every push to `master`.
 2. Create the `proposed-location` label.
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/)
