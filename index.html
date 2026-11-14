@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WhereCamp</title>
+  <meta name="description" content="WhereCamp: unconferences at the intersection of geography, technology, design, and culture. Since 2007, and back again. Propose and vote on the next camp.">
+  <meta name="theme-color" content="#0A1628">
+  <meta property="og:title" content="WhereCamp: the geo unconference is back">
+  <meta property="og:description" content="38 camps, 20 cities, 4 continents since 2007. Help choose where we map next.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="wherecamplogo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="top-nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="WhereCamp home">
+        <img src="wherecamplogo.svg" alt="" width="32" height="32">
+        <span>WhereCamp</span>
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">
+        <span class="visually-hidden">Menu</span><span aria-hidden="true">☰</span>
+      </button>
+      <nav id="nav-links" class="nav__links" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#map">Map</a>
+        <a href="#proposals">Vote</a>
+        <a href="#camps">Past camps</a>
+        <a href="#era">History</a>
+        <a class="btn btn--small btn--yellow" href="#host">Host a camp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <canvas class="hero__grid" aria-hidden="true"></canvas>
+      <div class="hero__content">
+        <img class="hero__logo" src="wherecamplogo.svg" alt="WhereCamp compass logo" width="112" height="112">
+        <p class="eyebrow">The geo unconference · since 2007 · back again</p>
+        <h1>Let’s map what’s next, <em>together.</em></h1>
+        <p class="hero__lede">Unconferences at the intersection of geography, technology, design, and culture. No keynotes and no sales pitches, just people who care about place, sharing what they’re building.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--yellow" href="#map">Propose a camp</a>
+          <a class="btn btn--ghost" href="#camps">See past camps</a>
+        </div>
+        <p class="coords" aria-live="off">
+          <span class="coords__label">You are here:</span>
+          <output id="hero-coords">0.0000° N, 0.0000° E</output>
+          <span id="hero-place" class="coords__place">Null Island</span>
+        </p>
+      </div>
+      <a class="hero__scroll" href="#about" aria-label="Scroll to About">↓</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section--light topo" id="about">
+      <div class="wrap two-col">
+        <div>
+          <p class="eyebrow eyebrow--dark">What’s a WhereCamp?</p>
+          <h2>A day where the attendees <em>are</em> the program.</h2>
+          <p>WhereCamp started in 2007 as a free, BarCamp-style companion to O’Reilly’s Where 2.0 conference. Back then, Google Maps mashups, OpenStreetMap, GeoRSS and GPS phones were changing who got to make maps. Geo-enthusiasts, developers, social place hackers, artists and activists showed up with no agenda and built one on a wall of sticky notes.</p>
+          <p>The format still works. Show up in the morning, pitch a session, vote with your feet. Anyone can lead a session. Demos beat slides. The hallway track <em>is</em> the track.</p>
+          <p>Mapping has never mattered more: climate adaptation, open data, AI that reasons about place, community and humanitarian mapping, transit, privacy. It’s time to get the community back in a room.</p>
+          <ul class="topics" aria-label="Typical topics">
+            <li>Social cartography</li><li>Humanitarian mapping</li><li>Transit</li><li>Geo-gaming</li>
+            <li>Place hacking</li><li>Open data</li><li>Climate &amp; resilience</li><li>GeoAI</li>
+            <li>Civic tech</li><li>Location privacy</li>
+          </ul>
+        </div>
+        <div class="board" aria-label="Example session board">
+          <div class="board__head"><span>Room A</span><span>Room B</span><span>Lawn</span></div>
+          <div class="board__row"><span class="t">10:00</span>
+            <div class="note n1">OSM for disaster response</div><div class="note n2">Vector tiles, from zero</div><div class="note n3">Map walk 🚶</div></div>
+          <div class="board__row"><span class="t">11:00</span>
+            <div class="note n4">LLMs + geocoding = Null Island?</div><div class="note n5">Bus data hack</div><div class="note empty">your session?</div></div>
+          <div class="board__row"><span class="t">13:00</span>
+            <div class="note n2">Indigenous mapping</div><div class="note empty">your session?</div><div class="note n1">Drone imagery demo</div></div>
+        </div>
+      </div>
+      <div class="wrap stats" id="stats" aria-label="WhereCamp by the numbers">
+        <div><strong data-stat="camps">38</strong><span>camps</span></div>
+        <div><strong data-stat="cities">20</strong><span>cities</span></div>
+        <div><strong data-stat="continents">4</strong><span>continents</span></div>
+        <div><strong data-stat="since">2007</strong><span>first camp</span></div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="section section--dark" id="map">
+      <div class="wrap">
+        <p class="eyebrow">The WhereCamp map</p>
+        <h2>Where we’ve been, and where we should go next.</h2>
+        <p class="lede">Every past camp, plus proposals from the community. <strong>Click anywhere on the map to propose a WhereCamp there.</strong> It opens a pre-filled GitHub issue, and others vote with a 👍.</p>
+      </div>
+      <div class="map-shell wrap">
+        <div id="map-canvas" role="region" aria-label="Interactive map of WhereCamp locations"></div>
+        <div class="map-legend" aria-label="Map legend">
+          <span><i class="dot dot--past"></i>Past camps</span>
+          <span><i class="dot dot--upcoming"></i>Upcoming</span>
+          <span><i class="dot dot--proposed"></i>Proposed (size = votes)</span>
+          <span><i class="dot dot--null"></i>Null Island</span>
+        </div>
+        <div class="map-actions">
+          <button class="btn btn--small btn--ghost" id="fly-null" type="button">🏝️ Fly to Null Island</button>
+          <button class="btn btn--small btn--ghost" id="fly-world" type="button">🌍 Whole world</button>
+          <a class="btn btn--small btn--yellow" id="propose-link" href="https://github.com/wherecamp/wherecamp/issues/new?template=propose-location.yml" target="_blank" rel="noopener">＋ Propose by form</a>
+        </div>
+        <p class="map-fallback" id="map-fallback" hidden>The map couldn’t load here. The lists below show every camp and proposal.</p>
+      </div>
+    </section>
+
+    <!-- PROPOSALS -->
+    <section class="section section--light" id="proposals">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--dark">Vote on the next camps</p>
+        <h2>Community proposals</h2>
+        <p class="lede">Ranked by 👍 reactions on GitHub. To vote, open a proposal and add a 👍. To host one, say so in the issue. Organisers get the first coffee.</p>
+        <div id="upcoming-block" hidden>
+          <h3>Upcoming camps</h3>
+          <ul class="cards" id="upcoming-list"></ul>
+        </div>
+        <ol class="leaderboard" id="proposal-list" aria-live="polite">
+          <li class="leaderboard__empty">Loading proposals…</li>
+        </ol>
+        <p class="small"><a href="https://github.com/wherecamp/wherecamp/issues?q=is%3Aissue+is%3Aopen+label%3Aproposed-location+sort%3Areactions-%2B1-desc" target="_blank" rel="noopener">See all proposals on GitHub →</a></p>
+      </div>
+    </section>
+
+    <!-- PAST CAMPS -->
+    <section class="section section--tint" id="camps">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--dark">The archive</p>
+        <h2>Past camps</h2>
+        <p class="lede">Independently organised by local volunteers, 2007–2015. Links go to the original wikis and sites, most of them via the Internet Archive.</p>
+        <div class="series-grid" id="series-grid">
+          <noscript><p>Turn on JavaScript to see the camp archive, or browse <a href="wherecamps.geojson">wherecamps.geojson</a> directly.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERA / TIMELINE -->
+    <section class="section section--dark" id="era">
+      <div class="wrap">
+        <p class="eyebrow">The era that made it</p>
+        <h2>From mashups to movement</h2>
+        <ol class="timeline" id="timeline">
+          <li class="ctx"><b>2004</b><span>OpenStreetMap is founded in London: a free, editable map of the world.</span></li>
+          <li class="ctx"><b>2005</b><span>Google Maps launches, and developers reverse-engineer it. The mashup era begins, “neogeography” gets a name, and O’Reilly’s Where 2.0 conference brings the new location web together.</span></li>
+        </ol>
+        <aside class="null-callout">
+          <div class="null-callout__badge" aria-hidden="true">0°,0°</div>
+          <div>
+            <h3>A note on Null Island</h3>
+            <p>Null Island is the point at 0°N, 0°E in the Gulf of Guinea, where the Equator meets the Prime Meridian. Nothing is there except a weather buoy (station 13010, “Soul”). Even so, it’s one of the most visited places in GIS: every time a geocoder fails and returns <code>(0, 0)</code>, another record washes up on its shores. It’s our patron non-place, and the home of <strong>WhereCamp Null Island</strong>, the online edition everyone can attend.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- HOST -->
+    <section class="section section--light" id="host">
+      <div class="wrap two-col">
+        <div>
+          <p class="eyebrow eyebrow--dark">Host a WhereCamp</p>
+          <h2>All you really need is a room and some sticky notes.</h2>
+          <p>WhereCamps are independently organised. There’s no franchise fee and no permission needed. Just keep it open, free or cheap, and participant-driven.</p>
+          <ol class="checklist">
+            <li><b>A venue</b> for 30–50 people, with a big room plus a couple of breakout spaces. Universities, libraries and friendly offices are classic hosts.</li>
+            <li><b>Wi-Fi and power</b> for everyone.</li>
+            <li><b>Sticky notes, markers</b> and a wall for the session board.</li>
+            <li><b>Coffee and lunch.</b> Local sponsors are usually happy to help.</li>
+            <li><b>A date</b> and a few co-organisers. Check the <a href="#proposals">proposals</a> to find people near you.</li>
+          </ol>
+        </div>
+        <div class="steps">
+          <h3>Get your camp on the map</h3>
+          <ol>
+            <li>Find or open a <a href="https://github.com/wherecamp/wherecamp/issues/new?template=propose-location.yml" target="_blank" rel="noopener">proposal for your city</a> and rally co-organisers there.</li>
+            <li>Once you have a date and venue, add a feature to <a href="https://github.com/wherecamp/wherecamp/blob/master/wherecamps.geojson" target="_blank" rel="noopener"><code>wherecamps.geojson</code></a> with <code>eventName</code>, <code>startDate</code>, <code>endDate</code>, venue and <code>url</code>, then open a pull request.</li>
+            <li>It shows up here as <em>upcoming</em> automatically, and moves to the archive once the date has passed.</li>
+          </ol>
+          <pre class="snippet" aria-label="Example GeoJSON feature"><code>{ "type": "Feature",
+  "geometry": { "type": "Point",
+                "coordinates": [-122.6765, 45.5231] },
+  "properties": {
+    "eventName": "WhereCampPDX 9",
+    "startDate": "2027-05-14",
+    "endDate":   "2027-05-15",
+    "venueName": "Your Friendly Venue",
+    "venueLocality": "Portland",
+    "venueCountry": "USA",
+    "url": "https://example.org"
+  } }</code></pre>
+          <a class="btn" href="https://github.com/wherecamp/wherecamp" target="_blank" rel="noopener">WhereCamp on GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="brand"><img src="wherecamplogo.svg" alt="" width="28" height="28"><span>WhereCamp</span></div>
+      <p>Content licensed <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license noopener" target="_blank">CC BY-SA 3.0</a>. Camp data adapted from <a href="https://github.com/reidab/wherecamp.org" target="_blank" rel="noopener">wherecamp.org</a>. Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</p>
+      <p class="footer__joke">Proudly located somewhere other than Null Island.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
