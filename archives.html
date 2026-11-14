@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WhereCamp Archives</title>
+  <meta name="description" content="Session notes, write-ups, slides and video from WhereCamps held between 2007 and 2015.">
+  <meta name="theme-color" content="#0A1628">
+  <link rel="icon" type="image/svg+xml" href="wherecamplogo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav scrolled" id="top-nav">
+    <div class="nav__inner">
+      <a class="brand" href="./" aria-label="WhereCamp home">
+        <img src="wherecamplogo.svg" alt="" width="32" height="32">
+        <span>WhereCamp</span>
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">
+        <span class="visually-hidden">Menu</span><span aria-hidden="true">☰</span>
+      </button>
+      <nav id="nav-links" class="nav__links" aria-label="Sections">
+        <a href="./#about">About</a>
+        <a href="./#map">Map</a>
+        <a href="./#proposals">Vote</a>
+        <a href="./#camps">Past camps</a>
+        <a href="archives.html" class="active" aria-current="page">Archives</a>
+        <a class="btn btn--small btn--yellow" href="./#host">Host a camp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <p class="eyebrow">The archives</p>
+        <h1>Notes, write-ups and recordings</h1>
+        <p class="lede">What people wrote down, photographed and filmed at past WhereCamps. Unconferences leave few records, so this list is short and every item on it is worth keeping. Links marked <span class="tag tag--archive">archived</span> go to a copy on the Internet Archive because the original page is gone.</p>
+      </div>
+    </section>
+
+    <section class="section section--light">
+      <div class="wrap">
+        <div class="filters" id="filters" role="group" aria-label="Filter by type"></div>
+        <div id="archive-list" aria-live="polite">
+          <noscript><p>Turn on JavaScript to see the archive, or browse <a href="archives.json">archives.json</a> and <a href="wherecamps.geojson">wherecamps.geojson</a> directly.</p></noscript>
+        </div>
+        <aside class="add-note">
+          <h3>Know of something that is missing?</h3>
+          <p>If you have session notes, photos, slides or a recording from a past camp, add an entry to <a href="https://github.com/wherecamp/wherecamp/blob/master/archives.json" target="_blank" rel="noopener"><code>archives.json</code></a> and open a pull request. Each entry needs the camp name, a title, a type and a link.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="brand"><img src="wherecamplogo.svg" alt="" width="28" height="28"><span>WhereCamp</span></div>
+      <p>Content licensed <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license noopener" target="_blank">CC BY-SA 3.0</a>. Linked pages belong to their authors. Archived copies are served by the <a href="https://web.archive.org/" target="_blank" rel="noopener">Internet Archive</a>.</p>
+    </div>
+  </footer>
+
+  <script src="archives.js"></script>
+</body>
+</html>
