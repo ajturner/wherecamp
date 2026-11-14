@@ -1,5 +1,5 @@
 name: Propose a WhereCamp location
-description: Suggest a city for a future WhereCamp. Others vote with a 👍 reaction, and it appears on the map at wherecamp.github.io/wherecamp.
+description: Suggest a city for a future WhereCamp. Others vote with a 👍 reaction, and it appears on the map at ajturner.github.io/wherecamp.
 title: "[Proposal] WhereCamp "
 labels: ["proposed-location"]
 body:

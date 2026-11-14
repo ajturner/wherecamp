@@ -4,11 +4,11 @@ Unconferences at the intersection of geography, technology, design, and culture.
 
 The Where 2.0 Conference is no more, but we still need a place and time where people fascinated by the power of location technology can gather to share ideas, show off projects, and connect our community. WhereCamps are a distributed unconference held in different cities. Each one is a free event where anyone can come to talk about geo. Between 2007 and 2015 there were 38 camps in 20 cities on 4 continents, and now we're bringing them back.
 
-**Website:** https://wherecamp.github.io/wherecamp/
+**Website:** https://ajturner.github.io/wherecamp/
 
 ## Propose and vote on the next camp
 
-- **Propose:** click anywhere on the [site map](https://wherecamp.github.io/wherecamp/#map), or [open a proposal](https://github.com/wherecamp/wherecamp/issues/new?template=propose-location.yml) directly. Proposals are GitHub issues labelled `proposed-location`.
+- **Propose:** click anywhere on the [site map](https://ajturner.github.io/wherecamp/#map), or [open a proposal](https://github.com/ajturner/wherecamp/issues/new?template=propose-location.yml) directly. Proposals are GitHub issues labelled `proposed-location`.
 - **Vote:** add a 👍 reaction to a proposal. The site ranks proposals by 👍 and sizes their pins on the map.
 - Proposals without valid coordinates wash up on [Null Island](https://en.wikipedia.org/wiki/Null_Island) (0°N, 0°E), like every other bad geocode.
 

@@ -5,7 +5,7 @@
 (() => {
   "use strict";
 
-  const REPO = "wherecamp/wherecamp";
+  const REPO = "ajturner/wherecamp";
   const PROPOSAL_LABEL = "proposed-location";
   const ISSUES_API = `https://api.github.com/repos/${REPO}/issues?labels=${PROPOSAL_LABEL}&state=open&per_page=100`;
   const CACHE_KEY = "wherecamp:proposals:v1";
