@@ -156,7 +156,7 @@ def main():
     ap.add_argument("--discover", nargs="+", metavar="PREFIX", help="list archived pages under each URL prefix")
     ap.add_argument("--limit", type=int, default=60, help="max pages per prefix for --discover")
     ap.add_argument("--report", metavar="FILE", help="write the JSON report here")
-    ap.add_argument("--workers", type=int, default=6, help="links to check at the same time")
+    ap.add_argument("--workers", type=int, default=4, help="links to check at the same time")
     args = ap.parse_args()
 
     if args.fixes_from:
@@ -175,6 +175,8 @@ def main():
         verdict = ("archived" if r["live"] else "dead-archive") if archived else ("live" if r["live"] else "dead")
         if not archived and r["status"] in BLOCKED:
             verdict = "blocked"  # the site answered but refused an automated visitor; a person can likely open it
+        if archived and r["status"] is None:
+            verdict = "unreachable"  # the Internet Archive did not answer; that says nothing about the copy
         snap = None
         if verdict.startswith("dead"):
             original = WAYBACK.sub("", url).split("/", 1)[-1] if archived else url
@@ -202,8 +204,8 @@ def main():
         Path(args.report).write_text(json.dumps(report, indent=2))
     print("\nFIXES_JSON=" + json.dumps(fixes, separators=(",", ":")))
     dead = sum(r["verdict"].startswith("dead") for r in results)
-    blocked = sum(r["verdict"] == "blocked" for r in results)
-    print(f"\n{len(results)} links: {len(results) - dead - blocked} ok, {blocked} blocked an automated check, "
+    blocked = sum(r["verdict"] in ("blocked", "unreachable") for r in results)
+    print(f"\n{len(results)} links: {len(results) - dead - blocked} ok, {blocked} could not be checked, "
           f"{dead} dead, {unresolved} dead with no archive copy")
     if args.fix:
         print(f"rewrote {apply_fixes(fixes)} links")

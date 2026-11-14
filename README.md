@@ -36,7 +36,7 @@ It's a plain static site (`index.html`, `styles.css`, `script.js`) served by Git
 
 ## Archives and link checks
 
-[`archives.html`](archives.html) lists every past camp with its site, plus session notes, write-ups, slides and video from [`archives.json`](archives.json). To add an item, add an entry with `camp` (the camp's `eventName`, or `All camps`), `title`, `type` (`notes`, `write-up`, `slides` or `video`), `url`, and optionally `author` and `date`.
+[`archives.html`](archives.html) lists every past camp with its site, plus session notes, write-ups and slides from [`archives.json`](archives.json). To add an item, add an entry with `camp` (the camp's `eventName`, or `All camps`), `title`, `type` (`notes`, `write-up`, `slides` or `video`), `url`, and optionally `author` and `date`.
 
 Old camp sites disappear, so `scripts/check_links.py` tests every link in `wherecamps.geojson` and `archives.json`. A link counts as live only if the page still mentions WhereCamp, because old domains get re-registered. For each dead link it finds the Internet Archive copy closest to the event date. The "Check camp links" workflow runs it on pull requests that change the data. Run it with `--fix` to rewrite dead links; the old address is kept as `originalUrl`.
 
